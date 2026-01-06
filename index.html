@@ -1,15 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLOTHIFY | Streetwear Brand</title>
+<title>CLOTHIFY | Premium Streetwear</title>
 
 <style>
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family:'Segoe UI',Arial,sans-serif;
   background:#0c0c0c;
   color:#fff;
 }
@@ -23,26 +24,24 @@ body{
   font-weight:700;
 }
 
-/* HEADER */
-header{
-  padding:80px 20px;
+/* HERO */
+.hero{
+  padding:90px 20px;
   text-align:center;
-  background:
-   linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
-   url("https://images.unsplash.com/photo-1520975922284-7b958f0b74d1");
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+  url("https://images.unsplash.com/photo-1520975916090-3105956dac38");
   background-size:cover;
   background-position:center;
 }
-header h1{
-  font-size:48px;
-  letter-spacing:5px;
+.slides{
+  font-size:42px;
+  font-weight:800;
+  height:60px;
 }
-header p{
-  color:#ddd;
-  max-width:500px;
-  margin:15px auto;
-  font-size:18px;
-}
+.slide{display:none}
+.slide.active{display:block}
+
+/* BUTTON */
 .btn{
   display:inline-block;
   padding:14px 34px;
@@ -104,6 +103,13 @@ header p{
   font-size:20px;
   font-weight:700;
 }
+.size{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:8px;
+  border:none;
+}
 
 /* TRUST */
 .trust{
@@ -145,9 +151,12 @@ footer{
 
 <div class="offer">🔥 Flat ₹100 OFF | Premium Streetwear Under ₹599</div>
 
-<header>
-  <h1>CLOTHIFY</h1>
-  <p>Modern streetwear inspired by comfort, confidence and everyday style.</p>
+<header class="hero">
+  <div class="slides">
+    <div class="slide active">Streetwear for Everyday Style</div>
+    <div class="slide">Premium T-Shirts Under ₹599</div>
+    <div class="slide">Men • Women • Unisex</div>
+  </div>
   <a class="btn" href="https://wa.me/917905539844">Shop on WhatsApp</a>
 </header>
 
@@ -163,10 +172,14 @@ footer{
 <section class="section">
   <h2>Featured Products</h2>
   <div class="products">
+
     <div class="card">
       <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
       <div class="info">
         <h3>Classic Black Tee</h3>
+        <select class="size">
+          <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+        </select>
         <p class="price">₹499</p>
         <a class="btn" href="https://wa.me/917905539844">Buy Now</a>
       </div>
@@ -176,10 +189,14 @@ footer{
       <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
       <div class="info">
         <h3>Oversized White Tee</h3>
+        <select class="size">
+          <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+        </select>
         <p class="price">₹599</p>
         <a class="btn" href="https://wa.me/917905539844">Buy Now</a>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -187,17 +204,28 @@ footer{
   <h2>Why CLOTHIFY?</h2>
   <div class="trust">
     <div>✔ Premium Fabric</div>
-    <div>✔ Trend-Driven Designs</div>
+    <div>✔ Trendy Streetwear</div>
     <div>✔ Pan India Delivery</div>
-    <div>✔ Affordable Pricing</div>
+    <div>✔ Secure Orders</div>
   </div>
 </section>
 
 <footer>
+  ⭐ 4.8/5 Rated • 10,000+ Happy Customers<br><br>
   © 2026 CLOTHIFY • Streetwear Redefined
 </footer>
 
 <a class="whatsapp" href="https://wa.me/917905539844">💬</a>
+
+<script>
+let slides=document.querySelectorAll(".slide");
+let i=0;
+setInterval(()=>{
+  slides.forEach(s=>s.classList.remove("active"));
+  i=(i+1)%slides.length;
+  slides[i].classList.add("active");
+},2500);
+</script>
 
 </body>
 </html>
